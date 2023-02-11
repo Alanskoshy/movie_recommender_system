@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+{% block content%}
+
+<h1 class="text" style="font-size:50px">Top 50 Movies</h1>
+
+{% for i in range(title|length) %}
+<article class="media content-section">
+    <div class="media-body">
+        <h2><a class="article-title" href="#">{{ title[i] }} ({{ year[i] }})</a></h2>
+        <div class="article-metadata">
+            <small class="text-muted">Rating : {{ rating[i] }}/10</small>&nbsp;
+            <small class="text-muted">Total Votes - {{ votes[i] }}</small><br>
+        </div>
+        <a class="mr-2" href="#">Director : {{ director[i] }}</a><br>
+        <p>Overview : {{ overview[i] }}</p>
+        <p>Cast : {{ cast[i] }}</p><br>
+    </div>
+</article>
+
+{% endfor %}
+{% endblock %}
